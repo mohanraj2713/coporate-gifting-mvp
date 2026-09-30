@@ -39,7 +39,7 @@ export default function ProductsPage() {
     fetch('/api/categories').then(r => r.json()).then(data => setCategories(data)).catch(console.error);
   }, []);
 
-  const handleWishlistClick = (itemId: number) => {
+  const handleWishlistClick = (itemId: string) => {
     if (!isSignedIn) {
       setPendingAction('wishlist');
       setPendingItemId(itemId);
